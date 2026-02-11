@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philo the Border Collie | 菲洛的成长记录</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+SC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-neutral-900 text-neutral-100 font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-neutral-900/80 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="text-xl font-bold tracking-wider uppercase">Philo 🐾</span>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleLang()" class="text-xs border border-neutral-600 px-3 py-1 rounded-full hover:bg-neutral-800 transition">
+                    <span id="lang-btn-text">CN / EN</span>
+                </button>
+                <button onclick="openFundModal()" class="text-neutral-400 hover:text-white transition">
+                    <i data-lucide="lock" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-20 px-6 text-center">
+        <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-neutral-800 mb-6 shadow-2xl">
+            <img src="photo1.jpg" alt="Philo Avatar" class="w-full h-full object-cover">
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4" data-i18n="hero_title">Hi, I am Philo.</h1>
+        <p class="text-neutral-400 max-w-lg mx-auto text-lg" data-i18n="hero_desc">A Border Collie exploring the world.</p>
+    </header>
+
+    <section class="max-w-3xl mx-auto px-6 py-12">
+        <h2 class="text-2xl font-bold mb-10 border-l-4 border-green-500 pl-4" data-i18n="timeline_title">Growth Journey</h2>
+        
+        <div class="space-y-12 relative border-l border-neutral-800 ml-3 md:ml-0 pl-8 md:pl-0">
+            
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2025.10.15</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-green-500 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2025.10.15</div>
+                    <div class="grid grid-cols-2 gap-2 mb-4">
+                        <div class="bg-neutral-800 rounded-xl overflow-hidden shadow-lg">
+                            <img src="parents_mom.png" class="w-full h-40 object-cover">
+                            <p class="text-center text-[10px] py-1 text-neutral-500">Mom: 菠萝</p>
+                        </div>
+                        <div class="bg-neutral-800 rounded-xl overflow-hidden shadow-lg">
+                            <img src="parents_dad.jpg" class="w-full h-40 object-cover">
+                            <p class="text-center text-[10px] py-1 text-neutral-500">Dad: 金边牧</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_born">Born</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_born_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2025.11.29</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-neutral-600 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2025.11.29</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="photo2.jpg" class="w-full h-64 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_vax1">First Vaccine</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_vax1_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2025.12.14</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-neutral-600 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2025.12.14</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="photo3.png" class="w-full h-64 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_home">New Home</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_home_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2025.12.17</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-neutral-600 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2025.12.17</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg text-center p-4">
+                        <img src="photo4.jpg" class="w-full h-64 object-cover rounded-lg">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_teeth">Teething</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_teeth_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2025.12.19</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-neutral-600 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2025.12.19</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="photo5.png" class="w-full h-64 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_car">First Ride</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_car_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2025.12.26</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-neutral-600 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2025.12.26</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="photo6.jpg" class="w-full h-64 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_brother">Brother is Back</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_brother_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2026.01.18</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-neutral-600 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2026.01.18</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg border-2 border-dashed border-neutral-700 p-2 text-center">
+                         <img src="photo7.jpg" class="w-full h-64 object-cover rounded-lg">
+                         <p class="text-[10px] mt-2 text-neutral-500 italic">Searching...</p>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_brother_missing">Missing</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_brother_missing_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2026.01.25</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-green-500 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2026.01.25</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="photo8.jpg" class="w-full h-64 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_forest">Forest Adventure</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_forest_desc">...</p>
+                </div>
+            </div>
+
+            <div class="md:flex group relative">
+                <div class="hidden md:block w-32 text-right pr-8 pt-2 text-neutral-500 text-sm font-mono">2026.02.03</div>
+                <div class="absolute -left-[37px] md:left-auto md:right-auto md:w-3 md:h-3 bg-green-500 rounded-full mt-3 border-4 border-neutral-900 z-10"></div>
+                <div class="flex-1 pb-8">
+                    <div class="md:hidden text-green-500 text-sm font-mono mb-2">2026.02.03</div>
+                    <div class="bg-neutral-800 rounded-xl overflow-hidden mb-4 shadow-lg">
+                        <img src="photo9.jpg" class="w-full h-64 object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" data-i18n="event_yogurt">Yogurt</h3>
+                    <p class="text-neutral-400 leading-relaxed" data-i18n="event_yogurt_desc">...</p>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <div id="fund-modal" class="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] hidden flex items-center justify-center p-4">
+        <div class="bg-neutral-800 p-8 rounded-2xl w-full max-w-md border border-neutral-700 relative">
+            <button onclick="closeFundModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-white">
+                <i data-lucide="x"></i>
+            </button>
+            
+            <div id="login-view" class="text-center">
+                <div class="bg-neutral-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2" data-i18n="fund_title">Family Access</h3>
+                <p class="text-sm text-neutral-400 mb-6" data-i18n="fund_desc">Enter the family code.</p>
+                <input type="password" id="passcode" class="w-full bg-neutral-900 border border-neutral-600 rounded-lg px-4 py-3 text-white text-center tracking-widest mb-4">
+                <button onclick="checkCode()" class="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-bold">Unlock</button>
+                <p id="error-msg" class="text-red-500 text-sm mt-3 hidden">Invalid Code</p>
+            </div>
+
+            <div id="data-view" class="hidden">
+                <h3 class="text-xl font-bold mb-4 text-green-400 uppercase tracking-tighter">📊 Health Fund Status</h3>
+                <div class="grid grid-cols-2 gap-4 mb-6 text-center">
+                    <div class="bg-neutral-900 p-4 rounded-xl border border-neutral-700">
+                        <div class="text-[10px] text-neutral-500 uppercase">Balance</div>
+                        <div class="text-xl font-bold">¥ 5,200</div>
+                    </div>
+                    <div class="bg-neutral-900 p-4 rounded-xl border border-neutral-700">
+                        <div class="text-[10px] text-neutral-500 uppercase">Status</div>
+                        <div class="text-xl font-bold text-green-500">Healthy</div>
+                    </div>
+                </div>
+                <div class="max-h-60 overflow-y-auto pr-2">
+                    <table class="w-full text-xs text-left text-neutral-400">
+                        <thead class="sticky top-0 bg-neutral-800">
+                            <tr class="border-b border-neutral-700">
+                                <th class="pb-2">Date</th>
+                                <th class="pb-2">Item</th>
+                                <th class="pb-2 text-right">Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-neutral-700/50">
+                            <tr><td class="py-2 text-neutral-500">2026.02.01</td><td class="py-2">Vaccine Shot</td><td class="py-2 text-right text-red-400">-300</td></tr>
+                            <tr><td class="py-2 text-neutral-500">2026.01.15</td><td class="py-2">Deposit</td><td class="py-2 text-right text-green-400">+500</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-12 border-t border-neutral-800 mt-20 text-neutral-600 text-[10px] tracking-widest uppercase">
+        <p>&copy; 2026 Philo the Border Collie. Made with Love.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

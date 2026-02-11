@@ -1,0 +1,21 @@
+
+/* 密码错误时的震动动画 */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.shake .bg-neutral-800 {
+    animation: shake 0.3s ease-in-out;
+}
+
+
+body { font-family: 'Inter', 'Noto Sans SC', sans-serif; scroll-behavior: smooth; }
+.timeline-dot { box-shadow: 0 0 0 4px #171717; }
+input:focus { outline: none; border-color: #22c55e; box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2); }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #171717; }
+::-webkit-scrollbar-thumb { background: #404040; border-radius: 10px; }
