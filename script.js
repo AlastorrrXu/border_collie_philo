@@ -22,6 +22,11 @@ const translations = {
         event_forest_desc: "2026.01.25: Final shot done! Got my ID. Chased by a big Bernese Mountain Dog sister in the park.",
         event_yogurt: "The Hunting Gift",
         event_yogurt_desc: "2026.02.03: I love yogurt! Brother is away, but yogurt keeps appearing. He must be a great hunter.",
+        event_birthday_label: "One Year of Philo",
+        event_birthday: "One Year Old, Still Running in Circles!",
+        event_birthday_desc: "2026.10.15: I turned one! From a little fluffball born on October 15, 2025, to a one-year-old Border Collie, I now have a whole year of dog life in my storybook.",
+        event_birthday_play: "Looking back at what makes me, me: I love chasing familiar dogs, being chased, and running in circles together. You chase me, I chase you. There is an art to all these laps!",
+        event_birthday_friends: "I have only a few regular playmates, including a male Shiba Inu mix I have known since we were puppies. My circle of friends is small, and an old friend who gets me is precious.",
         // Fund
         fund_title: "Philo's Health Fund",
         fund_desc: "Family access only. Please enter the code."
@@ -49,6 +54,11 @@ const translations = {
         event_forest_desc: "2026.01.25：最后一针打完，狗证到手！在森林公园被一只伯恩山姐姐追着跑。",
         event_yogurt: "酸奶与“打猎”",
         event_yogurt_desc: "2026.02.03：我最喜欢酸奶了！虽然哥哥不在，但总有酸奶送来，哥哥打猎真厉害。",
+        event_birthday_label: "一岁成长纪事",
+        event_birthday: "一岁啦，跑圈事业继续！",
+        event_birthday_desc: "2026.10.15：我一岁啦！从2025年10月15日出生的小毛团，到现在的一岁边牧，狗生的第一页写满了一整年。",
+        event_birthday_play: "回顾这一年的我：喜欢和熟悉的狗互相追逐、绕圈奔跑。你追我，我追你，跑圈也有大学问！",
+        event_birthday_friends: "能稳定一起玩的朋友不多，其中有一只从小认识的公柴犬混血。我的朋友圈不大，合拍的老朋友很珍贵。",
         // Fund
         fund_title: "菲洛的健康基金",
         fund_desc: "仅限家人访问，请输入内部代码。"
@@ -63,6 +73,7 @@ function toggleLang() {
 }
 
 function updateText() {
+    document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[currentLang][key]) {
